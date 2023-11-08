@@ -31,7 +31,7 @@ jobs:
 
     TomCat:
 
-        runs-on: tomcat
+        runs-on: [tomcat]
 
         needs: Build-Maven
 
