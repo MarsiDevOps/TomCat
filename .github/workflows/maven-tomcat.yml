@@ -28,3 +28,25 @@ jobs:
               with:
                 name: xashy-app
                 path: target/*.war
+
+    TomCat:
+
+        runs-on: tomcat
+
+        needs: Build-Maven
+
+        steps:
+
+            - name: Artifact Download
+              uses: actions/download-artifact@v3
+              with:
+                name: xashy-app
+                path: /opt/tomcat9/webapps
+
+            # - name: Create KeyPair
+            #   run:
+            #     echo ${{ secrets.TOMCAT_KEY_PAIR }} > ~/tomcatkp.pem
+            #     sudo chmod 400 ~/tomcat.pem
+
+            # - name: Secure Copy 
+
