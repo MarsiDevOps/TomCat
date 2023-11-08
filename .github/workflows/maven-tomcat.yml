@@ -31,7 +31,7 @@ jobs:
 
     TomCat:
 
-        runs-on: [tomcat]
+        runs-on: self-hosted
 
         needs: Build-Maven
 
@@ -42,6 +42,26 @@ jobs:
               with:
                 name: xashy-app
                 path: /opt/tomcat9/webapps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             # - name: Create KeyPair
             #   run:
